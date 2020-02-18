@@ -1,5 +1,5 @@
 {
-	"name": "repo-name",
+	"name": "teste-linx",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
@@ -56,7 +56,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "[GITHUB URL]"
+		"url": "https://github.com/yagoernandes/teste-linx"
 	},
 	"author": "Yago Ernandes <yago.700+dev@gmail.com>",
 	"license": "ISC"
