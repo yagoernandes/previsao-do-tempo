@@ -1,7 +1,9 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import repositories from './repositories';
+import forecast from './forecast'
+import ui from './ui'
 
 export default combineReducers({
-  repositories,
-});
+	forecast,
+	ui,
+})

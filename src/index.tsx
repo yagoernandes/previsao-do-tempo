@@ -4,9 +4,16 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import './index.css'
 
+import { Provider } from 'react-redux'
+import store from './store'
+
 require('dotenv').config()
 
-const aplicationEntryPoint = React.createElement(App)
+const aplicationEntryPoint = (
+	<Provider store={store}>
+		<App />
+	</Provider>
+)
 
 ReactDOM.render(aplicationEntryPoint, document.getElementById('root'))
 

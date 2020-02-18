@@ -1,18 +1,28 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import store from './store'
 import {
-	Page,
-	Title,
-	Spacer,
-	PesquisaInput,
-	Button,
-	Forecast,
-	Results
-} from './styles'
+	// useDispatch,
+	useSelector
+} from 'react-redux'
+
 import api from './services/api'
+import Busca from './screens/Busca/index'
+import Historico from './screens/Historico/index'
+import Day from './screens/Day/index'
+import {
+	currentPageSelector,
+	loadingSelector
+} from './store/ducks/ui/selectors'
+
+import { Pages } from './store/ducks/ui/types'
+
+import { Page, SubTitle } from './styles'
 
 const App: React.FC = () => {
+	// const dispatch = useDispatch()
+	const page = useSelector(currentPageSelector)
+
+	const loading = useSelector(loadingSelector)
+
 	React.useEffect(() => {
 		api
 			.get('', { params: { q: 'London,uk' } })
@@ -26,25 +36,21 @@ const App: React.FC = () => {
 			})
 	}, [])
 
-	return (
-		<Provider store={store}>
+	if (loading)
+		return (
 			<Page>
-				<Title>IAL Previsão do tempo</Title>
-				{/* <SubTitle>Digite a cidade</SubTitle> */}
-				<Spacer height={'2em'} />
-				<div>
-					<PesquisaInput />
-					<Button>Buscar</Button>
-				</div>
-				<Spacer height={'2em'} />
-				<Results>
-					<Forecast>Teste</Forecast>
-					<Forecast>Teste</Forecast>
-					<Forecast>Teste</Forecast>
-				</Results>
+				<SubTitle>Carregando...</SubTitle>
 			</Page>
-		</Provider>
-	)
+		)
+
+	switch (page) {
+		case Pages.BUSCA:
+			return <Busca />
+		case Pages.HISTORICO:
+			return <Historico />
+		case Pages.DIA:
+			return <Day />
+	}
 }
 
 export default App

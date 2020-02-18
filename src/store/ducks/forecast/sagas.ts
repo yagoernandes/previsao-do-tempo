@@ -1,11 +1,11 @@
 import { call, put, takeLatest, all } from 'redux-saga/effects'
-import { RepositoriesTypes } from './types'
+import { ForecastTypes } from './types'
 import api from '../../../services/api'
 import { loadSuccess, loadFailure } from './actions'
 
 export default function* watcherSaga() {
 	return yield all([
-		takeLatest(RepositoriesTypes.LOAD_REQUEST, load),
+		takeLatest(ForecastTypes.LOAD_REQUEST, load),
 	])
 }
 

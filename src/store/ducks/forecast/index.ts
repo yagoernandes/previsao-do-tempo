@@ -1,7 +1,7 @@
 import { Reducer } from 'redux'
-import { RepositoriesState, RepositoriesTypes } from './types'
+import { ForecastState, ForecastTypes } from './types'
 
-const INITIAL_STATE: RepositoriesState = {
+const INITIAL_STATE: ForecastState = {
 	data: [{
 		id: 1, name: 'yagoernandes',
 	}],
@@ -9,19 +9,19 @@ const INITIAL_STATE: RepositoriesState = {
 	loading: true,
 }
 
-const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
+const reducer: Reducer<ForecastState> = (state = INITIAL_STATE, action) => {
 	const { type, payload } = action
 	switch (type) {
-		case RepositoriesTypes.LOAD_REQUEST:
+		case ForecastTypes.LOAD_REQUEST:
 			return { ...state, loading: true }
-		case RepositoriesTypes.LOAD_SUCCESS:
+		case ForecastTypes.LOAD_SUCCESS:
 			return {
 				...state,
 				loading: false,
 				error: false,
 				data: payload,
 			}
-		case RepositoriesTypes.LOAD_FAILURE:
+		case ForecastTypes.LOAD_FAILURE:
 			return {
 				...state,
 				loading: false,
