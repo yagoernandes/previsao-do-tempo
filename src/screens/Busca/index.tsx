@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import { PesquisaInput, Forecast, Results } from './styles'
+import { PesquisaInput } from './styles'
 
 import { Title, Spacer, Button, Page } from '../../styles'
 
@@ -16,19 +16,17 @@ const Busca: React.FC = () => {
 
 	return (
 		<Page>
+			<img
+				src={require('../../assets/imgs/logo.png')}
+				style={{ width: '10em', height: '10em', marginBottom:'2em' }}
+			/>
 			<Title>IAL Previsão do tempo</Title>
 			{/* <SubTitle>Digite a cidade</SubTitle> */}
 			<Spacer height={'2em'} />
 			<div>
-				<PesquisaInput />
+				<PesquisaInput placeholder='Cidade' />
 				<Button onClick={submit}>Buscar</Button>
 			</div>
-			<Spacer height={'2em'} />
-			<Results>
-				<Forecast>Teste</Forecast>
-				<Forecast>Teste</Forecast>
-				<Forecast>Teste</Forecast>
-			</Results>
 		</Page>
 	)
 }
