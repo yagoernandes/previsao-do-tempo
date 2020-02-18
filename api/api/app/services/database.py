@@ -4,13 +4,13 @@ import psycopg2.extras
 class conexao():
 
     def __init__(self):
-        self.dbname='teste_ial'
+        self.dbname='postgres'
         self.user ='postgres'
         self.host = 'localhost' 
-        self.port = '5432'
+        self.port = '5001'
         self.password= 'zenerial'
 
-    def get_connection(self):        
+    def get_connection(self):
         db_connect = psycopg2.connect("dbname="+self.dbname+" user="+self.user+" host="+self.host+" port="+self.port+" password="+self.password)
         db_connect.set_client_encoding('latin1') 
         return db_connect

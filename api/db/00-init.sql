@@ -1,3 +1,8 @@
-CREATE DATABASE teste_ial TEMPLATE template0;
+CREATE EXTENSION IF NOT EXISTS dblink;
 
-GRANT ALL PRIVILEGES ON DATABASE teste_ial TO postgres;
+DO $$
+BEGIN
+PERFORM dblink('host=localhost port=5432 user=postgres password=zenerial dbname=postgres' ,'CREATE DATABASE testeial TEMPLATE template0;');
+EXCEPTION WHEN duplicate_database THEN RAISE NOTICE '%, skipping', SQLERRM USING ERRCODE = SQLSTATE;
+END
+$$;

@@ -1,20 +1,23 @@
 import { call, put, takeLatest, all } from 'redux-saga/effects'
 import { ForecastTypes } from './types'
+import { InterfaceTypes } from '../ui/types'
 import api from '../../../services/api'
+import { AnyAction } from 'redux'
 import { loadSuccess, loadFailure } from './actions'
 
 export default function* watcherSaga() {
-	return yield all([
-		takeLatest(ForecastTypes.LOAD_REQUEST, load),
-	])
+	return yield all([takeLatest(InterfaceTypes.SEARCH_REQUEST, load)])
 }
 
-export function* load() {
+export function* load(action: AnyAction) {
 	try {
-		const response = yield call(api.get, '/users/yagoernandes/repos')
-
-		yield put(loadSuccess(response.data))
+		console.log('aqui-----------')
+		const response = yield call(api.get, `cidade/${action.payload}`)
+		console.log('passou-----------')
+		console.log(response)
+		yield put(loadSuccess(response))
 	} catch (error) {
-		yield put(loadFailure(error))
+		console.log('ERROR::', error.message)
+		yield put(loadFailure(error.message))
 	}
 }

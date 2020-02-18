@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  db:
+    build: ./api/db
+    ports:
+      - 5001:5432
+  webserver:
+    build: ./api/api
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    links:
+      - db
+  # front:
+  #   build: ./front
+  #   depends_on:
+  #     - webserver
+  #   ports:
+  #     - 3000:3000

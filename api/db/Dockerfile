@@ -1,6 +1,6 @@
 FROM postgres:9.6
 
-ENV POSTGRES_DB teste_ial
+ENV POSTGRES_DB postgres
 ENV POSTGRES_USER postgres
 ENV POSTGRES_PASSWORD zenerial
 ENV POSTGRES_INITDB_ARGS -T template0

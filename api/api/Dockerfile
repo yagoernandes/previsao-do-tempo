@@ -18,5 +18,6 @@ FROM python:3
 ADD . /app/
 WORKDIR /app
 RUN pip install -r requirements.txt
-ENTRYPOINT [ "python" ]
-CMD [ "run.py" ]
+# ENTRYPOINT [ "python" ]
+CMD [ "python", "run.py" ]
+EXPOSE 5000

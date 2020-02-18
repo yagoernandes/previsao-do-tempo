@@ -9,13 +9,14 @@ import { searchRequest, goToHistory } from '../../store/ducks/ui/actions'
 
 const Busca: React.FC = () => {
 	const dispatch = useDispatch()
+	const [input, setInput] = React.useState('')
 
 	const submit = () => {
-		dispatch(searchRequest())
+		dispatch(searchRequest(input))
 	}
 
 	const goToHistorico = () => {
-		console.log('navegar para historico')
+		console.log(input)
 		dispatch(goToHistory())
 	}
 
@@ -30,7 +31,7 @@ const Busca: React.FC = () => {
 			{/* <SubTitle>Digite a cidade</SubTitle> */}
 			<Spacer height={'2em'} />
 			<div>
-				<PesquisaInput placeholder="Cidade" />
+				<PesquisaInput placeholder="Cidade" value={input} onChange={text => setInput(text.target.value)} />
 				<Button onClick={submit}>Buscar</Button>
 			</div>
 			<Link onClick={goToHistorico}>Histórico</Link>

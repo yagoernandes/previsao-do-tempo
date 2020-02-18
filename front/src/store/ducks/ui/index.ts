@@ -4,7 +4,7 @@ import { InterfaceState, InterfaceTypes, Pages } from './types'
 const INITIAL_STATE: InterfaceState = {
 	error: false,
 	loading: false,
-	page: Pages.HISTORICO
+	page: Pages.BUSCA
 }
 
 const reducer: Reducer<InterfaceState> = (state = INITIAL_STATE, action) => {

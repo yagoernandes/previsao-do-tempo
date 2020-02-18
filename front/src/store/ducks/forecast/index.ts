@@ -2,9 +2,7 @@ import { Reducer } from 'redux'
 import { ForecastState, ForecastTypes } from './types'
 
 const INITIAL_STATE: ForecastState = {
-	data: [{
-		id: 1, name: 'yagoernandes',
-	}],
+	data: [],
 	error: false,
 	loading: true,
 }

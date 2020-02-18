@@ -4,7 +4,7 @@ export const selectSearch = () => ({ type: InterfaceTypes.SELECT_SEARCH })
 
 export const selectHistory = () => ({ type: InterfaceTypes.SELECT_HISTORY })
 
-export const searchRequest = () => ({ type: InterfaceTypes.SEARCH_REQUEST })
+export const searchRequest = (cityName:string) => ({ type: InterfaceTypes.SEARCH_REQUEST, payload: cityName })
 
 export const backToSearch = () => ({ type: InterfaceTypes.BACK_SEARCH })
 
