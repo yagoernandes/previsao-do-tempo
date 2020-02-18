@@ -1,0 +1,3 @@
+CREATE DATABASE teste_ial TEMPLATE template0;
+
+GRANT ALL PRIVILEGES ON DATABASE teste_ial TO postgres;
