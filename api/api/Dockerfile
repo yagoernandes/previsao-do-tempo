@@ -12,18 +12,14 @@
 
 FROM python:alpine
 
-RUN adduser -D yago && apk update && apk add --virtual build-deps gcc python-dev musl-dev && apk add postgresql-dev
-
 WORKDIR /home/yago
 
 COPY . .
 
-RUN python -m venv env && venv/bin/pip install -r requirements.txt
+RUN adduser -D yago && apk update && apk add --virtual build-deps gcc python-dev musl-dev && apk add postgresql-dev && pip install -r requirements.txt && chown -R yago:yago ./
 
-ENV FLASK_APP run.py
-
-RUN chown -R yago:yago ./
 USER yago
 
+CMD ["python", "run.py"]
+
 EXPOSE 5000
-ENTRYPOINT ["python", "run.py"]

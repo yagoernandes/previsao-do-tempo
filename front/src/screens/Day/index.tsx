@@ -19,6 +19,7 @@ interface StateProps {
 	speed: number
 	deg: number
 	chart_data: number[]
+	chart_info: Forecast[]
 	labels: string[]
 }
 
@@ -36,6 +37,7 @@ const Day: React.FC = () => {
 		speed: 0,
 		deg: 0,
 		chart_data: [],
+		chart_info: [],
 		labels: []
 	})
 
@@ -49,6 +51,7 @@ const Day: React.FC = () => {
 			var min = 1000
 			var labels: string[] = []
 			var chart_data: number[] = []
+			var chart_info: Forecast[] = []
 
 			dia?.forEach((previsao: Forecast) => {
 				if (previsao.temp_max > max) {
@@ -59,6 +62,7 @@ const Day: React.FC = () => {
 				}
 				labels.push(previsao.dt_txt.substring(11,16))
 				chart_data.push(previsao.temp)
+				chart_info.push(previsao)
 			})
 
 			setState({
@@ -71,6 +75,7 @@ const Day: React.FC = () => {
 				humidity: dia[0].humidity,
 				speed: dia[0].speed,
 				chart_data,
+				chart_info,
 				labels
 			})
 		}
@@ -117,8 +122,24 @@ const Day: React.FC = () => {
 						width={30}
 						height={15}
 						options={{
-							maintainAspectRatio: true
-						}}
+				tooltips: {
+					cornerRadius: 4,
+					callbacks: {
+						label: (tooltipItems:any, data:any) => {
+							return '';
+						},
+						title: (tooltipItems:any, data:any) => {
+							const value = data.datasets[0].additionalInfo[tooltipItems[0].index]
+							return `Temperatura: ${tooltipItems[0].yLabel} ºC\nSensação: ${value.feels_like} ºC\nMáxima: ${value.temp_max} ºC\nMínima: ${value.temp_min} ºC\nVento: ${value.speed} m/s ${value.deg}º\nUmidade: ${value.humidity}%\n${value.description}
+							`;
+						},
+					}
+				},
+				legend: {
+					display: false
+				},
+				maintainAspectRatio: true
+			}}
 						data={{
 							labels: state.labels,
 							datasets: [
@@ -141,7 +162,8 @@ const Day: React.FC = () => {
 									pointHoverBorderWidth: 2,
 									pointRadius: 1,
 									pointHitRadius: 10,
-									data: state.chart_data
+									data: state.chart_data,
+									additionalInfo: state.chart_info
 								}
 							]
 						}}

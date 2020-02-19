@@ -2,6 +2,15 @@
 
 O programa é composto por 3 partes, Frontend em React(Node), Backend em Flask(Python) e um banco de dados Postgres.
 
+Para levantar a aplicação completa pelo docker, basta executar:
+```shell
+docker-compose up
+# ou
+docker-compose up -d
+```
+A aplicação é levantada mas o front não consegue requisitar do back por causa do CORS
+
+
 ## Frontend
 
 O Frontend foi desenvolvido em Typescript utilizando as seguintes dependências:
@@ -27,16 +36,24 @@ prettier : Formatação de código de acordo com os padrões
 ```
 
 ##### Para executar compilar a imagem Docker, execute:
-
 ```shell
 docker build -t teste-yago-front ./front/
 ```
 
 ##### Para subir, execute:
-
 ```shell
 docker run -p 80:80 -d teste-yago-front
 ```
+
+##### Para executar localmente, execute:
+```shell
+npm install 
+
+npm start --prefix front/
+```
+
+###### Configuração de conexão com o servidor:
+* ./front/src/config/environments.ts
 
 
 ## Backend
@@ -47,6 +64,9 @@ O Backend foi construído usando a framework Flask.
 ```shell
 python ./api/api/run.py
 ```
+
+###### Configuração de conexão com o banco:
+* ./api/api/app/services/database.py
 
 
 ## Banco de dados

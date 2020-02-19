@@ -12,6 +12,5 @@ export default function* watcherSaga() {
 
 export function* back() {
 	const isHistory = yield select(isHistorySelector)
-	console.log('isHistory', isHistory)
 	yield isHistory ? put(backToHistory()) : put(backToResults())
 }

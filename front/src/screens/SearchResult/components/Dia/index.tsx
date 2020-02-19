@@ -40,7 +40,6 @@ const Dia: React.FC<Props> = ({ title = 'Não identificado', dia, subtitle, date
 	}, [dia])
 
 	const selectDiaHandler = () => {
-		console.log('funcionou')
 		dispatch(selectDay(dia))
 	}
 

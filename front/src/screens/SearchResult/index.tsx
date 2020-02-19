@@ -29,7 +29,6 @@ const History: React.FC = () => {
 	React.useEffect(() => {
 		const arrayDias: any = {}
 		results.forEach(previsao => {
-			// console.log(acumulador, valorAtual)
 			const data = previsao.dt_txt.substring(0, 10)
 			if (!arrayDias.hasOwnProperty(data)) {
 				arrayDias[data] = []

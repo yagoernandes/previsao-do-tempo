@@ -6,8 +6,8 @@ class conexao():
     def __init__(self):
         self.dbname='postgres'
         self.user ='postgres'
-        self.host = 'localhost' 
-        self.port = '5001'
+        self.host = 'db' 
+        self.port = '5432'
         self.password= 'zenerial'
 
     def get_connection(self):

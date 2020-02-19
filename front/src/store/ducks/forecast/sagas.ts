@@ -16,7 +16,6 @@ export default function* watcherSaga() {
 export function* load(action: AnyAction) {
 	try {
 		const response = yield call(api.get, `cidade/${action.payload}`)
-		console.log(response)
 		if (response?.data?.status == 404) {
 			yield put(loadFailure('Cidade não encontrada'))
 			yield put(searchError('Cidade não encontrada'))

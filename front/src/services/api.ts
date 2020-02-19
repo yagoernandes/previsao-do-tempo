@@ -8,7 +8,6 @@ const api = axios.create({
 })
 
 api.interceptors.request.use(request => {
-	console.log('Request:', request)
 	return request
 })
 

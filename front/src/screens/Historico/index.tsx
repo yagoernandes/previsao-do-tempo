@@ -25,7 +25,6 @@ const History: React.FC = () => {
 	React.useEffect(() => {
 		const arrayDias: any = {}
 		previsoes.forEach(previsao => {
-			// console.log(acumulador, valorAtual)
 			const data = previsao.dt_txt.substring(0, 10) + previsao.name
 			if (!arrayDias.hasOwnProperty(data)) {
 				arrayDias[data] = []
@@ -33,14 +32,6 @@ const History: React.FC = () => {
 			arrayDias[data].push(previsao)
 		})
 		setDias(arrayDias)
-		// const arrayCidades: any = {}
-		// previsoes.forEach((previsao, index) => {
-		// 	const data = previsao.name
-		// 	if (!arrayCidades.hasOwnProperty(data)) {
-		// 		arrayCidades[data] = []
-		// 	}
-		// 	arrayCidades[data].push(index)
-		// })
 	}, [previsoes])
 
 	return (

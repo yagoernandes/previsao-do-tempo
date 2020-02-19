@@ -24,19 +24,6 @@ const App: React.FC = () => {
 
 	const loading = useSelector(loadingSelector)
 
-	React.useEffect(() => {
-		api
-			.get('', { params: { q: 'London,uk' } })
-			.then(result => {
-				console.log(result)
-				console.log(result.data)
-			})
-			.catch(error => {
-				console.log(error.message)
-				console.log(error)
-			})
-	}, [])
-
 	if (loading)
 		return (
 			<Page>

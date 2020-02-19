@@ -18,7 +18,6 @@ const Busca: React.FC = () => {
 	}
 
 	const goToHistorico = () => {
-		console.log(input)
 		dispatch(goToHistory())
 	}
 
