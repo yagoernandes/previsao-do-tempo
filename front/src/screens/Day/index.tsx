@@ -65,7 +65,7 @@ const Day: React.FC = () => {
 							<SubTitle>Mínima: 11º</SubTitle>
 							<SubTitle>Sensação térmica: 36º</SubTitle>
 							<SubTitle>Umidade: 65%</SubTitle>
-							<SubTitle>Vento: 5,1km/h (58º)</SubTitle>
+							<SubTitle>Vento: 5,1m/s (58º)</SubTitle>
 						</div>
 						<img
 							src={require('../../assets/imgs/logo.png')}

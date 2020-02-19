@@ -7,7 +7,7 @@ class cidade(Resource):
     def __init__(self):
         self.functions = functions
     def get(self,cidade):
-        api_url = f"http://api.openweathermap.org/data/2.5/forecast?q={cidade}&appid=230394d0d4e46b5c16ebe825e188e2b0"
+        api_url = f"http://api.openweathermap.org/data/2.5/forecast?q={cidade}&appid=230394d0d4e46b5c16ebe825e188e2b0&lang=pt_br&units=metric"
         response = requests.get(api_url)
         if response.status_code == 200:
             self.jsons = json.loads(response.content.decode('utf-8'))

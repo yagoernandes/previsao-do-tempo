@@ -9,7 +9,7 @@ const Dia: React.FC = () => {
 
 	const selectDiaHandler = () => {
 		console.log('funcionou')
-		dispatch(selectDay({ teste: '123' }))
+		dispatch(selectDay(undefined))
 	}
 
 	return (

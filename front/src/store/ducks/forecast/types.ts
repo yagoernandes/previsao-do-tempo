@@ -15,12 +15,23 @@ export interface Forecast {
   name: string
 	country: string
 	dt: number
-
+	temp: number
+	feels_like: number
+	temp_max: number
+	temp_min: number
+	pressure: number
+	sea_level: number
+	grnd_level: number
+	humidity: number
+	temp_kf: number
+	main: string
+	description: string
+	icon: string
+	speed: number
+	deg: number
+	dt_txt: string
 }
 
-export interface ForecastList {
-	data: Forecast[]
-}
 
 /**
  * State types

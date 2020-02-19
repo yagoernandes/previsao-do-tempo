@@ -8,3 +8,9 @@ export const PesquisaInput = styled.input`
 	padding-right: 10px;
 	text-align: center;
 `
+
+export const DiaIcon = styled.img`
+	width: 40;
+	height: 40;
+	margin-right: '1em';
+`
