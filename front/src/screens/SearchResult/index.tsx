@@ -72,8 +72,8 @@ const History: React.FC = () => {
 					>
 						<div>
 							<Title>{state.name}</Title>
-							<SubTitle>Temperatura: {state.temp}º</SubTitle>
-							<SubTitle>Sensação térmica: {state.feels_like}º</SubTitle>
+							<SubTitle>Temperatura: {state.temp}ºC</SubTitle>
+							<SubTitle>Sensação térmica: {state.feels_like}ºC</SubTitle>
 							<SubTitle>Umidade: {state.humidity}%</SubTitle>
 							<SubTitle>Vento: {state.speed}m/s ({state.deg}º)</SubTitle>
 						</div>
@@ -95,7 +95,7 @@ const History: React.FC = () => {
 						}}
 					>
 						{Object.keys(dias).map((dia:any) => (
-							<Dia title={dia} dia={dias[dia]} />
+							<Dia key={dia[0].id} title={dia} dia={dias[dia]} />
 						))}
 					</div>
 					<Spacer />

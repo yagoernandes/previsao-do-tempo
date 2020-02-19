@@ -7,3 +7,5 @@ export const loadingSelector = (state: ApplicationState) => state.ui.loading
 export const errorSelector = (state: ApplicationState) => state.ui.error
 
 export const daySelector = (state: ApplicationState) => state.ui.day_selected
+
+export const isHistorySelector = (state: ApplicationState) => state.ui.isHistory

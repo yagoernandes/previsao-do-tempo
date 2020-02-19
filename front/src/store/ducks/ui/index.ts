@@ -38,14 +38,16 @@ const reducer: Reducer<InterfaceState> = (state = INITIAL_STATE, action) => {
 				...state,
 				loading: false,
 				error: false,
-				page: Pages.RESULTADOS
+				page: Pages.RESULTADOS,
+				isHistory: false
 			}
 		case InterfaceTypes.HISTORY_SUCCESS:
 			return {
 				...state,
 				loading: false,
 				error: false,
-				page: Pages.HISTORICO
+				page: Pages.HISTORICO,
+				isHistory: true
 			}
 		case InterfaceTypes.SEARCH_ERROR:
 			return {
@@ -62,6 +64,11 @@ const reducer: Reducer<InterfaceState> = (state = INITIAL_STATE, action) => {
 		case InterfaceTypes.BACK_HISTORY:
 			return {
 				...state,
+				page: Pages.HISTORICO
+			}
+		case InterfaceTypes.BACK_RESULTS:
+			return {
+				...state,
 				page: Pages.RESULTADOS
 			}
 		case InterfaceTypes.SELECT_DAY:
@@ -74,7 +81,8 @@ const reducer: Reducer<InterfaceState> = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				loading:true,
-				page: Pages.HISTORICO
+				page: Pages.HISTORICO,
+				isHistory: true
 			}
 		default:
 			return state

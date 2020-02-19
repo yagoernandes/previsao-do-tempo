@@ -5,7 +5,7 @@ export const Page = styled.div`
 	height: 100%;
 	width: 100%;
 	flex-direction: column;
-	background-color: #c4ebff;
+	background-color: #ddd;
 	justify-content: center;
 	align-items: center;
 `

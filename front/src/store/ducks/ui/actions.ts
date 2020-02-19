@@ -21,12 +21,16 @@ export const backToSearch = () => ({ type: InterfaceTypes.BACK_SEARCH })
 
 export const backToHistory = () => ({ type: InterfaceTypes.BACK_HISTORY })
 
+export const backToResults = () => ({ type: InterfaceTypes.BACK_RESULTS })
+
 export const selectDay = (dia: Forecast[] | undefined) => ({
 	type: InterfaceTypes.SELECT_DAY,
 	payload: dia
 })
 
 export const goToHistory = () => ({ type: InterfaceTypes.GOTO_HISTORY })
+
+export const goBack = () => ({ type: InterfaceTypes.GOBACK })
 
 export const historyLoaded = () => ({ type: InterfaceTypes.HISTORY_SUCCESS })
 

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Line } from 'react-chartjs-2'
 
 import { loadingSelector } from '../../store/ducks/ui/selectors'
-import { backToHistory } from '../../store/ducks/ui/actions'
+import { goBack } from '../../store/ducks/ui/actions'
 import { SubTitle, Page, Title, Button } from '../../styles'
 
 import { daySelector } from '../../store/ducks/ui/selectors'
@@ -39,8 +39,8 @@ const Day: React.FC = () => {
 		labels: []
 	})
 
-	const goBack = () => {
-		dispatch(backToHistory())
+	const goBackAction = () => {
+		dispatch(goBack())
 	}
 
 	React.useEffect(() => {
@@ -100,8 +100,8 @@ const Day: React.FC = () => {
 									'/' +
 									state.dt_txt.substring(0, 4)}
 							</Title>
-							<SubTitle>Máxima: {state.max}º</SubTitle>
-							<SubTitle>Mínima: {state.min}º</SubTitle>
+							<SubTitle>Máxima: {state.max}ºC</SubTitle>
+							<SubTitle>Mínima: {state.min}ºC</SubTitle>
 							<SubTitle>Umidade: {state.humidity}%</SubTitle>
 							<SubTitle>
 								Vento: {state.speed}m/s ({state.deg}º)
@@ -126,17 +126,17 @@ const Day: React.FC = () => {
 									label: 'Temperatura',
 									fill: false,
 									lineTension: 0.1,
-									backgroundColor: 'rgba(75,192,192,0.4)',
-									borderColor: 'rgba(75,192,192,1)',
+									backgroundColor: 'rgba(153,0,0,0.4)',
+									borderColor: '#900',
 									borderCapStyle: 'butt',
 									borderDash: [],
 									borderDashOffset: 0.0,
 									borderJoinStyle: 'round',
-									pointBorderColor: 'rgba(75,192,192,1)',
-									pointBackgroundColor: '#fff',
+									pointBorderColor: '#fff',
+									pointBackgroundColor: '#900',
 									pointBorderWidth: 1,
 									pointHoverRadius: 10,
-									pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+									pointHoverBackgroundColor: '#900',
 									pointHoverBorderColor: 'rgba(220,220,220,1)',
 									pointHoverBorderWidth: 2,
 									pointRadius: 1,
@@ -146,7 +146,7 @@ const Day: React.FC = () => {
 							]
 						}}
 					/>
-					<Button onClick={goBack}>Voltar</Button>
+					<Button onClick={goBackAction}>Voltar</Button>
 				</div>
 			)}
 		</Page>
