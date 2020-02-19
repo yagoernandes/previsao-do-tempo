@@ -1,27 +1,29 @@
-FROM ubuntu:18.04
+# FROM ubuntu:18.04
+# RUN apt-get update -y && \
+#     apt-get install -y python3-pip python3-dev libpq-dev
+# COPY ./requirements.txt /app/requirements.txt
+# WORKDIR /app
+# RUN pip3 install -r requirements.txt
+# COPY . /app
+# ENTRYPOINT [ "python3" ]
+# CMD [ "run.py" ]
+# EXPOSE 5000
 
-RUN apt-get update -y && \
-    apt-get install -y python3-pip python3-dev libpq-dev
 
-COPY ./requirements.txt /app/requirements.txt
+FROM python:alpine
 
-WORKDIR /app
+RUN adduser -D yago && apk update && apk add --virtual build-deps gcc python-dev musl-dev && apk add postgresql-dev
 
-RUN pip3 install -r requirements.txt
+WORKDIR /home/yago
 
-COPY . /app
+COPY . .
 
-ENTRYPOINT [ "python3" ]
+RUN python -m venv env && venv/bin/pip install -r requirements.txt
 
-CMD [ "run.py" ]
+ENV FLASK_APP run.py
+
+RUN chown -R yago:yago ./
+USER yago
 
 EXPOSE 5000
-
-
-# FROM python:3
-# ADD . /app/
-# WORKDIR /app
-# RUN pip install -r requirements.txt
-# # ENTRYPOINT [ "python" ]
-# CMD [ "python3", "run.py" ]
-# EXPOSE 5000
+ENTRYPOINT ["python", "run.py"]
