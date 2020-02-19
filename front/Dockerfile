@@ -1,11 +1,11 @@
-FROM node:12.2.0-alpine
-
+FROM node:12.2.0-alpine AS builder
 WORKDIR /app
+COPY . .
+RUN npm i && npm run build
 
-ENV PATH /app/node_modules/.bin:$PATH
-
-COPY . /app
-
-RUN npm install && npm install react-scripts@3.0.1 -g
-
-CMD ["npm", "start"]
+FROM node:12.2.0-alpine
+RUN npm i -g serve
+WORKDIR /app
+COPY --from=builder /app/build .
+CMD ["serve", "-p", "80", "-s", "."]
+EXPOSE 80
