@@ -30,6 +30,7 @@ export interface Forecast {
 	speed: number
 	deg: number
 	dt_txt: string
+	data_historico?: string
 }
 
 

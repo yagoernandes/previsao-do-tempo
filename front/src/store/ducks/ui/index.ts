@@ -1,9 +1,11 @@
 import { Reducer } from 'redux'
 import { InterfaceState, InterfaceTypes, Pages } from './types'
+import { Forecast } from '../forecast/types'
 
 const INITIAL_STATE: InterfaceState = {
 	error: false,
 	loading: false,
+	day_selected: undefined,
 	page: Pages.BUSCA
 }
 
@@ -38,6 +40,13 @@ const reducer: Reducer<InterfaceState> = (state = INITIAL_STATE, action) => {
 				error: false,
 				page: Pages.RESULTADOS
 			}
+		case InterfaceTypes.HISTORY_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				error: false,
+				page: Pages.HISTORICO
+			}
 		case InterfaceTypes.SEARCH_ERROR:
 			return {
 				...state,
@@ -58,11 +67,13 @@ const reducer: Reducer<InterfaceState> = (state = INITIAL_STATE, action) => {
 		case InterfaceTypes.SELECT_DAY:
 			return {
 				...state,
+				day_selected: payload,
 				page: Pages.DIA
 			}
 		case InterfaceTypes.GOTO_HISTORY:
 			return {
 				...state,
+				loading:true,
 				page: Pages.HISTORICO
 			}
 		default:

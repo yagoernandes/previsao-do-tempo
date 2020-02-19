@@ -10,9 +10,11 @@ import {DiaIcon} from '../../styles'
 interface Props {
 	title?: string
 	dia?: Forecast[]
+	subtitle?: string
+	date?: string
 }
 
-const Dia: React.FC<Props> = ({ title = 'Não identificado', dia }: Props) => {
+const Dia: React.FC<Props> = ({ title = 'Não identificado', dia, subtitle, date }: Props) => {
 	const dispatch = useDispatch()
 	const [state, setState] = React.useState({
 		max: 0,
@@ -69,9 +71,12 @@ const Dia: React.FC<Props> = ({ title = 'Não identificado', dia }: Props) => {
 				alt={'img-weather'}
 			/>
 			<div style={{ display: 'flex', flexDirection: 'column' }}>
-		<SubTitle>{titleDia}</SubTitle>
+				<SubTitle>{titleDia} { subtitle && subtitle }</SubTitle>
 				<span>Máxima: {state.max.toFixed(1)}º</span>
 				<span>Minima: {state.min.toFixed(1)}º</span>
+				{
+					date && (<span style={{color:'#777'}}>Pesquisado em {date}</span>)
+				}
 			</div>
 		</div>
 	)

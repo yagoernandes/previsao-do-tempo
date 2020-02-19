@@ -8,7 +8,7 @@ const Dia: React.FC = () => {
 	const dispatch = useDispatch()
 
 	const selectDiaHandler = () => {
-		console.log('funcionou')
+		// TODO: ALTERAR!!!!!!!!
 		dispatch(selectDay(undefined))
 	}
 

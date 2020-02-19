@@ -7,6 +7,7 @@ export const PesquisaInput = styled.input`
 	padding-left: 10px;
 	padding-right: 10px;
 	text-align: center;
+	background-color : #FFF; 
 `
 
 export const Results = styled.ul``

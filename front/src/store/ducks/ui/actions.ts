@@ -21,9 +21,14 @@ export const backToSearch = () => ({ type: InterfaceTypes.BACK_SEARCH })
 
 export const backToHistory = () => ({ type: InterfaceTypes.BACK_HISTORY })
 
-export const selectDay = (dia: Forecast[]|undefined) => ({
+export const selectDay = (dia: Forecast[] | undefined) => ({
 	type: InterfaceTypes.SELECT_DAY,
 	payload: dia
 })
 
 export const goToHistory = () => ({ type: InterfaceTypes.GOTO_HISTORY })
+
+export const historyLoaded = () => ({ type: InterfaceTypes.HISTORY_SUCCESS })
+
+export const historyError = () => ({ type: InterfaceTypes.HISTORY_ERROR })
+

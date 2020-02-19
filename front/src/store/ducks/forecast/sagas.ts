@@ -4,10 +4,13 @@ import { InterfaceTypes } from '../ui/types'
 import api from '../../../services/api'
 import { AnyAction } from 'redux'
 import { loadSuccess, loadFailure } from './actions'
-import { searchSuccess, searchError } from '../ui/actions'
+import { searchSuccess, searchError, historyLoaded, historyError } from '../ui/actions'
 
 export default function* watcherSaga() {
-	return yield all([takeLatest(InterfaceTypes.SEARCH_REQUEST, load)])
+	return yield all([
+		takeLatest(InterfaceTypes.SEARCH_REQUEST, load),
+		takeLatest(InterfaceTypes.GOTO_HISTORY, loadHistory)
+	])
 }
 
 export function* load(action: AnyAction) {
@@ -24,5 +27,16 @@ export function* load(action: AnyAction) {
 	} catch (error) {
 		yield put(loadFailure(error.message))
 		yield put(searchError(error.message))
+	}
+}
+
+export function* loadHistory() {
+	try {
+		const response = yield call(api.get, 'historico')
+		yield put(loadSuccess(response.data))
+		yield put(historyLoaded())
+	} catch (error) {
+		yield put(loadFailure(error.message))
+		yield put(historyError())
 	}
 }

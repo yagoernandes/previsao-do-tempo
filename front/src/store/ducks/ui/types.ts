@@ -1,3 +1,5 @@
+import { Forecast } from '../forecast/types'
+
 /**
  * Action types
  */
@@ -10,7 +12,9 @@ export enum InterfaceTypes {
 	BACK_SEARCH = '@interface/BACK_SEARCH',
 	BACK_HISTORY = '@interface/BACK_HISTORY',
 	SELECT_DAY = '@interface/SELECT_DAY',
-	GOTO_HISTORY = '@interface/GOTO_HISTORY'
+	GOTO_HISTORY = '@interface/GOTO_HISTORY',
+	HISTORY_SUCCESS = '@interface/HISTORY_SUCCESS',
+	HISTORY_ERROR = '@interface/HISTORY_ERROR',
 }
 
 export enum Pages {
@@ -27,4 +31,5 @@ export interface InterfaceState {
 	readonly loading: boolean
 	readonly error: boolean
 	readonly page: Pages
+	day_selected: Forecast[] | undefined
 }
