@@ -13,6 +13,13 @@ export enum ForecastTypes {
 export interface Forecast {
   id: number
   name: string
+	country: string
+	dt: number
+
+}
+
+export interface ForecastList {
+	data: Forecast[]
 }
 
 /**

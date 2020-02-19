@@ -20,6 +20,11 @@ export const SubTitle = styled.h1`
 	/* text-align: center; */
 	color: #777;
 `
+export const Error = styled.span`
+	font-size: 1em;
+	/* text-align: center; */
+	color: #900;
+`
 
 export const Spacer = styled.div<{ height?: string }>`
 	height: ${props => props?.height || '2em'};

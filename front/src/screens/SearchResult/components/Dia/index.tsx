@@ -35,6 +35,11 @@ const Dia: React.FC = () => {
 				<span>Maxima: 35º</span>
 				<span>Minima: 35º</span>
 			</div>
+			<div style={{ display: 'flex', flexDirection: 'column' }}>
+				<SubTitle>18/02/2020</SubTitle>
+				<span>Maxima: 35º</span>
+				<span>Minima: 35º</span>
+			</div>
 		</div>
 	)
 }

@@ -1,15 +1,17 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { PesquisaInput } from './styles'
 
-import { Title, Spacer, Button, Page, Link } from '../../styles'
+import { Title, Spacer, Button, Page, Link, Error } from '../../styles'
 
 import { searchRequest, goToHistory } from '../../store/ducks/ui/actions'
+import { errorSelector } from '../../store/ducks/ui/selectors'
 
 const Busca: React.FC = () => {
 	const dispatch = useDispatch()
 	const [input, setInput] = React.useState('')
+	const error = useSelector(errorSelector)
 
 	const submit = () => {
 		dispatch(searchRequest(input))
@@ -35,6 +37,9 @@ const Busca: React.FC = () => {
 				<Button onClick={submit}>Buscar</Button>
 			</div>
 			<Link onClick={goToHistorico}>Histórico</Link>
+			{
+				error && <Error>{error}</Error>
+			}
 		</Page>
 	)
 }
