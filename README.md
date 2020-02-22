@@ -8,8 +8,6 @@ docker-compose up
 # ou
 docker-compose up -d
 ```
-A aplicação é levantada mas o front não consegue requisitar do back por causa do CORS
-
 
 ## Frontend
 
