@@ -1,6 +1,21 @@
-# Teste de conhecimentos técnicos Fullstack
+<p align="center">
+   <img src="front/src/assets/imgs/logo.png" width="200"/>
+</p>
 
-O programa é composto por 3 partes, Frontend em React(Node), Backend em Flask(Python) e um banco de dados Postgres.
+# Previsão do Tempo
+
+[![Author](https://img.shields.io/badge/Author-YagoErnandes-brightgreen)](https://github.com/yagoernandes)
+[![Languages](https://img.shields.io/github/languages/count/YagoErnandes/teste-linx?color=brightgreen)](#)
+[![Stars](https://img.shields.io/github/stars/YagoErnandes/teste-linx?color=brightgreen)](https://github.com/yagoernandes/teste-linx/stargazers)
+[![Forks](https://img.shields.io/github/forks/YagoErnandes/teste-linx?color=brightgreen&style=flat-square)](https://github.com/YagoErnandes/teste-linx/network/members)
+[![Contributors](https://img.shields.io/github/contributors/YagoErnandes/teste-linx?color=D54F44&style=flat-square)](https://github.com/YagoErnandes/teste-linx/graphs/contributors)
+
+> Programa simples para visualizar previsão do tempo utilizando a API do [OpenWeatherMap](https://openweathermap.org/)
+
+<p align="center"><img src=".github/home.png"/></p>
+<p align="center"><img src=".github/search.png"/></p>
+
+O programa é composto por 3 partes, Frontend em React(Node), Backend em Flask(Python) e um banco de dados Postgres, todas interligadas com docker e docker-compose.
 
 Para levantar a aplicação completa pelo docker, basta executar:
 ```shell
