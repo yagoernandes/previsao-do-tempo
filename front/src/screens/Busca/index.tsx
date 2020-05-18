@@ -28,7 +28,7 @@ const Busca: React.FC = () => {
 				style={{ width: '10em', height: '10em', marginBottom: '2em' }}
 				alt={'img-logo'}
 			/>
-			<Title>IAL Previsão do tempo</Title>
+			<Title>Previsão do tempo</Title>
 			<Spacer height={'2em'} />
 			<div>
 				<PesquisaInput placeholder="Cidade" value={input} onChange={text => setInput(text.target.value)} />
