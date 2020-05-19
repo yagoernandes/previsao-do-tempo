@@ -37,7 +37,7 @@ docker-compose up
 docker-compose up -d
 ```
 
-## Frontend
+## :iphone: Frontend
 
 O Frontend foi desenvolvido em Typescript utilizando as seguintes dependências:
 
@@ -84,7 +84,7 @@ npm start --prefix front/
 
 - ./front/src/config/environments.ts
 
-## Backend
+## :gear: Backend
 
 O Backend foi construído usando a framework Flask.
 
@@ -98,7 +98,7 @@ python ./api/api/run.py
 
 - ./api/api/app/services/database.py
 
-## Banco de dados
+## :dvd: Banco de dados
 
 O banco possui um arquivo Dockerfile para gerar uma imagem de container docker com o banco já instalado e configurado.
 
