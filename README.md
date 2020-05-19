@@ -3,12 +3,17 @@
 </p>
 
 # Previsão do Tempo
-
-[![Author](https://img.shields.io/badge/Author-YagoErnandes-brightgreen)](https://github.com/yagoernandes)
-[![Languages](https://img.shields.io/github/languages/count/YagoErnandes/teste-linx?color=brightgreen)](#)
-[![Stars](https://img.shields.io/github/stars/YagoErnandes/teste-linx?color=brightgreen)](https://github.com/yagoernandes/teste-linx/stargazers)
-[![Forks](https://img.shields.io/github/forks/YagoErnandes/teste-linx?color=brightgreen&style=flat-square)](https://github.com/YagoErnandes/teste-linx/network/members)
-[![Contributors](https://img.shields.io/github/contributors/YagoErnandes/teste-linx?color=D54F44&style=flat-square)](https://github.com/YagoErnandes/teste-linx/graphs/contributors)
+<p align="center">
+    <a href="https://github.com/yagoernandes">
+        <img src="https://img.shields.io/badge/Author-YagoErnandes-brightgreen" alt="Author" />
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/github/languages/count/YagoErnandes/teste-linx?color=brightgreen" alt="Languages" />
+    </a>
+    <a href="https://github.com/yagoernandes/teste-linx/stargazers">
+        <img src="https://img.shields.io/github/stars/YagoErnandes/teste-linx?color=brightgreen" alt="Stars" />
+    </a>
+</p>
 
 > Programa simples para visualizar previsão do tempo utilizando a API do [OpenWeatherMap](https://openweathermap.org/)
 
