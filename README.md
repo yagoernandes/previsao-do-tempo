@@ -9,10 +9,10 @@
         <img src="https://img.shields.io/badge/Author-YagoErnandes-brightgreen" alt="Author" />
     </a>
     <a href="#">
-        <img src="https://img.shields.io/github/languages/count/YagoErnandes/teste-linx?color=brightgreen" alt="Languages" />
+        <img src="https://img.shields.io/github/languages/count/YagoErnandes/previsao-do-tempo?color=brightgreen" alt="Languages" />
     </a>
-    <a href="https://github.com/yagoernandes/teste-linx/stargazers">
-        <img src="https://img.shields.io/github/stars/YagoErnandes/teste-linx?color=brightgreen" alt="Stars" />
+    <a href="https://github.com/yagoernandes/previsao-do-tempo/stargazers">
+        <img src="https://img.shields.io/github/stars/YagoErnandes/previsao-do-tempo?color=brightgreen" alt="Stars" />
     </a>
     <br />
     <a href="https://twitter.com/intent/follow?screen_name=yagoernandes">
