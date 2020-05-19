@@ -15,7 +15,7 @@
         <img src="https://img.shields.io/github/stars/YagoErnandes/teste-linx?color=brightgreen" alt="Stars" />
     </a>
     <a href="https://twitter.com/intent/follow?screen_name=yagoernandes">
-        <img src="https://img.shields.io/twitter/follow/shields_io?style=social&logo=twitter"
+        <img src="https://img.shields.io/twitter/follow/yagoernandes?style=social&logo=twitter"
             alt="follow on Twitter"></a>
 </p>
 
