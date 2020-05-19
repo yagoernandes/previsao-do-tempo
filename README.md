@@ -14,6 +14,7 @@
     <a href="https://github.com/yagoernandes/teste-linx/stargazers">
         <img src="https://img.shields.io/github/stars/YagoErnandes/teste-linx?color=brightgreen" alt="Stars" />
     </a>
+    <br />
     <a href="https://twitter.com/intent/follow?screen_name=yagoernandes">
         <img src="https://img.shields.io/twitter/follow/yagoernandes?style=social&logo=twitter"
             alt="follow on Twitter"></a>
@@ -21,8 +22,10 @@
 
 > Programa simples para visualizar previsão do tempo utilizando a API do [OpenWeatherMap](https://openweathermap.org/)
 
-<p align="center"><img src=".github/home.png" height="300" width="auto"/></p>
-<p align="center"><img src=".github/search.png" height="300" width="auto"/></p>
+<p align="center"><img src=".github/home.png" height="400" width="auto"/></p>
+<p align="center"><img src=".github/search.png" height="400" width="auto"/></p>
+
+## :pushpin: Overview  
 
 O programa é composto por 3 partes, Frontend em React(Node), Backend em Flask(Python) e um banco de dados Postgres, todas interligadas com docker e docker-compose.
 
