@@ -113,3 +113,9 @@ docker build -t teste-yago-db ./api/db/
 ```shell
 docker run -p 5432:5432 -d teste-yago-db
 ```
+
+---
+
+<p align="center">
+Made with :heart: by <a href="https://www.linkedin.com/in/yagoernandes">YagoErnandes</a>
+</p>
